@@ -7,7 +7,7 @@ COPY ./*.txt ./*.py ./*.sh ./*.onnx /app/
 
 RUN cd /app 
 RUN python3 -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple/
-RUN pip3 install -r requirements.txt -i  https://pypi.tuna.tsinghua.edu.cn/simple/
+RUN pip install -r ./requirements.txt -i  https://pypi.tuna.tsinghua.edu.cn/simple/
 RUN rm -rf /tmp/* && rm -rf /root/.cache/* 
 RUN sed -i "s@http://\(deb\|security\).debian.org@https://mirrors.huaweicloud.com@g" /etc/apt/sources.list
 RUN apt update 
